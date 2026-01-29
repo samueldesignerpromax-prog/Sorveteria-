@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Sorveteria Gelada Delícia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS DENTRO DO HTML -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        :root { --rosa: #ff9ebb; --azul: #87ceeb; --amarelo: #ffd700; --roxo: #dda0dd; --verde: #98fb98; --marrom: #d2691e; }
+        
+        body { background: linear-gradient(135deg, #ff9ebb 0%, #87ceeb 100%); min-height: 100vh; color: #333; }
+        
+        header { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+        
+        .logo { display: flex; align-items: center; gap: 1rem; }
+        .logo h1 { color: #ff6b9d; font-size: 1.8rem; text-shadow: 2px 2px 0px var(--amarelo); }
+        .logo-icon { font-size: 2.5rem; color: var(--marrom); }
+        
+        nav ul { display: flex; list-style: none; gap: 1rem; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--marrom); font-weight: bold; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        nav a:hover, nav a.ativa { background: var(--rosa); color: white; transform: translateY(-3px); }
+        
+        main { max-width: 1200px; margin: 2rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.95); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-height: 60vh; }
+        
+        h2 { color: var(--roxo); border-bottom: 3px solid var(--amarelo); padding-bottom: 0.5rem; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .historia, .equipe, .valores { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .historia-item, .membro, .valor-card { background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .historia-icone { font-size: 2.5rem; color: var(--rosa); margin-bottom: 1rem; }
+        .membro img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--amarelo); background: #f0f0f0; }
+        .valor-card i { font-size: 2rem; color: var(--roxo); margin-bottom: 1rem; }
+        
+        .btn-enviar { background: linear-gradient(to right, var(--rosa), var(--roxo)); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-size: 1.1rem; cursor: pointer; transition: transform 0.3s; display: inline-block; text-decoration: none; margin-top: 1rem; }
+        .btn-enviar:hover { transform: scale(1.05); }
+        
+        footer { background: var(--marrom); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .redes-sociais { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; font-size: 1.5rem; }
+        .redes-sociais a { color: white; transition: transform 0.3s; }
+        .redes-sociais a:hover { transform: scale(1.2); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav ul { justify-content: center; }
+            main { padding: 1rem; margin: 1rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-ice-cream logo-icon"></i>
+            <h1>Sobre Nossa História</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="sabores.html"><i class="fas fa-snowflake"></i> Sabores</a></li>
+                <li><a href="acais.html"><i class="fas fa-wine-glass"></i> Açaís</a></li>
+                <li><a href="milkshakes.html"><i class="fas fa-glass-whiskey"></i> Milkshakes</a></li>
+                <li><a href="sobre.html" class="ativa"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+                <li><a href="contato.html"><i class="fas fa-phone"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2><i class="fas fa-heart"></i> Nossa História</h2>
+        
+        <div class="historia">
+            <div class="historia-item">
+                <i class="fas fa-seedling historia-icone"></i>
+                <h3>Desde 1995</h3>
+                <p>A Sorveteria Gelada Delícia começou como um pequeno sonho da família Silva. Com uma receita secreta de sorvete artesanal, conquistamos o coração da cidade.</p>
+            </div>
+            
+            <div class="historia-item">
+                <i class="fas fa-award historia-icone"></i>
+                <h3>Premiada</h3>
+                <p>Fomos eleitos por 3 anos consecutivos como a Melhor Sorveteria da Região pelo prêmio "Sabor & Qualidade".</p>
+            </div>
+            
+            <div class="historia-item">
+                <i class="fas fa-leaf historia-icone"></i>
+                <h3>Ingredientes Naturais</h3>
+                <p>Usamos apenas frutas da estação, leite fresco e ingredientes 100% naturais, sem conservantes ou corantes artificiais.</p>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-users"></i> Nossa Equipe</h2>
+        
+        <div class="equipe">
+            <div class="membro">
+                <div style="width: 100px; height: 100px; background: #ff9ebb; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👨‍🍳</div>
+                <h4>Carlos Silva</h4>
+                <p>Fundador e Mestre Sorveteiro</p>
+                <p>"Meu avô me ensinou que sorvete bom se faz com amor!"</p>
+            </div>
+            
+            <div class="membro">
+                <div style="width: 100px; height: 100px; background: #dda0dd; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👩‍🍳</div>
+                <h4>Ana Paula</h4>
+                <p>Chef de Criação</p>
+                <p>"Crio sabores pensando em trazer felicidade para cada cliente."</p>
+            </div>
+            
+            <div class="membro">
+                <div style="width: 100px; height: 100px; background: #87ceeb; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👨‍💼</div>
+                <h4>Roberto Costa</h4>
+                <p>Especialista em Açaí</p>
+                <p>"O segredo está no açaí puro e nos acompanhamentos frescos."</p>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-star"></i> Nossos Valores</h2>
+        
+        <div class="valores">
+            <div class="valor-card">
+                <i class="fas fa-heart"></i>
+                <h4>Qualidade</h4>
+                <p>Sempre buscamos os melhores ingredientes</p>
+            </div>
+            
+            <div class="valor-card">
+                <i class="fas fa-smile"></i>
+                <h4>Felicidade</h4>
+                <p>Queremos adoçar seu dia com nossos produtos</p>
+            </div>
+            
+            <div class="valor-card">
+                <i class="fas fa-recycle"></i>
+                <h4>Sustentabilidade</h4>
+                <p>Usamos embalagens biodegradáveis</p>
+            </div>
+            
+            <div class="valor-card">
+                <i class="fas fa-handshake"></i>
+                <h4>Comunidade</h4>
+                <p>Apoiamos produtores locais</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <h3><i class="fas fa-map-marker-alt"></i> Venha Nos Conhecer!</h3>
+            <p>Estamos esperando por você para proporcionar uma experiência gelada e deliciosa!</p>
+            <a href="contato.html" class="btn-enviar">
+                <i class="fas fa-directions"></i> Ver Localização
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="redes-sociais">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 1995-2024 Sorveteria Gelada Delícia. 29 anos de tradição!</p>
+    </footer>
+
+    <!-- JAVASCRIPT DENTRO DO HTML -->
+    <script>
+        // MENU ATIVO
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('ativa');
+                }
+            });
+            
+            // CONTADOR
+            let visitas = parseInt(localStorage.getItem('visitasSobre')) || 0;
+            visitas++;
+            localStorage.setItem('visitasSobre', visitas);
+            console.log(`Visitas em Sobre: ${visitas}`);
+        });
+        
+        // ANIMAÇÃO DOS CARDS
+        document.querySelectorAll('.historia-item, .membro, .valor-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
