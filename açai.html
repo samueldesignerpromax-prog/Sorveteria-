@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaís - Sorveteria Gelada Delícia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS DENTRO DO HTML -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        :root { --rosa: #ff9ebb; --azul: #87ceeb; --amarelo: #ffd700; --roxo: #dda0dd; --verde: #98fb98; --marrom: #d2691e; }
+        
+        body { background: linear-gradient(135deg, #ff9ebb 0%, #87ceeb 100%); min-height: 100vh; color: #333; }
+        
+        header { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+        
+        .logo { display: flex; align-items: center; gap: 1rem; }
+        .logo h1 { color: #ff6b9d; font-size: 1.8rem; text-shadow: 2px 2px 0px var(--amarelo); }
+        .logo-icon { font-size: 2.5rem; color: var(--marrom); }
+        
+        nav ul { display: flex; list-style: none; gap: 1rem; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--marrom); font-weight: bold; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        nav a:hover, nav a.ativa { background: var(--rosa); color: white; transform: translateY(-3px); }
+        
+        main { max-width: 1200px; margin: 2rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.95); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-height: 60vh; }
+        
+        h2 { color: var(--roxo); border-bottom: 3px solid var(--amarelo); padding-bottom: 0.5rem; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .cardapio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .produto-card { background: white; border-radius: 15px; padding: 1.5rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; border: 3px solid transparent; display: flex; flex-direction: column; height: 100%; }
+        .produto-card:hover { transform: translateY(-10px); border-color: var(--azul); }
+        .acai { border-top: 5px solid var(--roxo); }
+        .icone-produto { font-size: 3rem; margin-bottom: 1rem; color: var(--marrom); }
+        .preco { color: var(--marrom); font-weight: bold; font-size: 1.5rem; margin: 1rem 0; }
+        .btn-adicionar { background: var(--verde); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: bold; transition: background 0.3s; margin-top: auto; }
+        .btn-adicionar:hover { background: #7ae07a; }
+        
+        .grid-acompanhamentos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .grid-acompanhamentos span { background: #f0f8ff; padding: 0.5rem 1rem; border-radius: 20px; text-align: center; border: 2px solid var(--azul); }
+        
+        footer { background: var(--marrom); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .redes-sociais { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; font-size: 1.5rem; }
+        .redes-sociais a { color: white; transition: transform 0.3s; }
+        .redes-sociais a:hover { transform: scale(1.2); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav ul { justify-content: center; }
+            main { padding: 1rem; margin: 1rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-ice-cream logo-icon"></i>
+            <h1>Açaís Premium</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="sabores.html"><i class="fas fa-snowflake"></i> Sabores</a></li>
+                <li><a href="acais.html" class="ativa"><i class="fas fa-wine-glass"></i> Açaís</a></li>
+                <li><a href="milkshakes.html"><i class="fas fa-glass-whiskey"></i> Milkshakes</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+                <li><a href="contato.html"><i class="fas fa-phone"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2><i class="fas fa-wine-glass-alt"></i> Açaís 100% Natural</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Açaí puro do Pará, sem conservantes, batido na hora!</p>
+        
+        <div class="cardapio-grid">
+            <div class="produto-card acai">
+                <i class="fas fa-wine-glass-alt icone-produto"></i>
+                <h3>Açaí Tradicional</h3>
+                <p>Açaí puro, banana, granola e leite condensado</p>
+                <div class="preco">300ml: R$ 16,90</div>
+                <div class="preco">500ml: R$ 22,90</div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('Açaí Tradicional 300ml', 16.90)">Pedir 300ml</button>
+            </div>
+            
+            <div class="produto-card acai">
+                <i class="fas fa-crown icone-produto"></i>
+                <h3>Açaí Especial</h3>
+                <p>Açaí, banana, morango, granola, leite condensado, paçoca</p>
+                <div class="preco">300ml: R$ 19,90</div>
+                <div class="preco">500ml: R$ 25,90</div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('Açaí Especial 300ml', 19.90)">Pedir 300ml</button>
+            </div>
+            
+            <div class="produto-card acai">
+                <i class="fas fa-dumbbell icone-produto"></i>
+                <h3>Açaí Fitness</h3>
+                <p>Açaí, banana, granola, whey protein, mel</p>
+                <div class="preco">300ml: R$ 21,90</div>
+                <div class="preco">500ml: R$ 27,90</div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('Açaí Fitness 300ml', 21.90)">Pedir 300ml</button>
+            </div>
+        </div>
+        
+        <div style="margin: 2rem 0;">
+            <h3><i class="fas fa-plus-circle"></i> Acompanhamentos (R$ 2,00 cada)</h3>
+            <div class="grid-acompanhamentos">
+                <span>🍌 Banana</span>
+                <span>🍓 Morango</span>
+                <span>🥝 Kiwi</span>
+                <span>🥭 Manga</span>
+                <span>🌰 Granola</span>
+                <span>🥜 Paçoca</span>
+                <span>🍫 Chocolate</span>
+                <span>🥛 Leite Condensado</span>
+            </div>
+        </div>
+        
+        <div style="background: #fff0f5; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+            <h3><i class="fas fa-calendar-check"></i> Promoção da Semana</h3>
+            <p><strong>2ª FEIRA:</strong> 50% de desconto em todos os açaís!</p>
+            <p><strong>QUINTA:</strong> Compre 2 açaís 500ml e ganhe 1 adicional grátis!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="redes-sociais">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 Sorveteria Gelada Delícia</p>
+    </footer>
+
+    <!-- JAVASCRIPT DENTRO DO HTML -->
+    <script>
+        // CARRINHO SIMPLES
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            alert(`✅ ${nome} adicionado ao carrinho!`);
+        }
+        
+        // MENU ATIVO
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('ativa');
+                }
+            });
+            
+            // CONTADOR
+            let visitas = parseInt(localStorage.getItem('visitasAcais')) || 0;
+            visitas++;
+            localStorage.setItem('visitasAcais', visitas);
+            console.log(`Visitas em Açaís: ${visitas}`);
+        });
+    </script>
+</body>
+</html>
