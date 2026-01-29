@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Sorveteria Gelada Delícia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS DENTRO DO HTML -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        :root { --rosa: #ff9ebb; --azul: #87ceeb; --amarelo: #ffd700; --roxo: #dda0dd; --verde: #98fb98; --marrom: #d2691e; }
+        
+        body { background: linear-gradient(135deg, #ff9ebb 0%, #87ceeb 100%); min-height: 100vh; color: #333; }
+        
+        header { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+        
+        .logo { display: flex; align-items: center; gap: 1rem; }
+        .logo h1 { color: #ff6b9d; font-size: 1.8rem; text-shadow: 2px 2px 0px var(--amarelo); }
+        .logo-icon { font-size: 2.5rem; color: var(--marrom); }
+        
+        nav ul { display: flex; list-style: none; gap: 1rem; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--marrom); font-weight: bold; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        nav a:hover, nav a.ativa { background: var(--rosa); color: white; transform: translateY(-3px); }
+        
+        main { max-width: 1200px; margin: 2rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.95); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-height: 60vh; }
+        
+        h2 { color: var(--roxo); border-bottom: 3px solid var(--amarelo); padding-bottom: 0.5rem; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .contato-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 2rem 0; }
+        .info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .info-item i { color: var(--rosa); font-size: 1.5rem; margin-top: 0.5rem; }
+        
+        .mapa-placeholder { background: #e0f7fa; border-radius: 10px; padding: 2rem; text-align: center; }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: var(--roxo); font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 1rem; border: 2px solid var(--azul); border-radius: 10px; font-size: 1rem; }
+        textarea { min-height: 150px; resize: vertical; }
+        
+        .btn-enviar { background: linear-gradient(to right, var(--rosa), var(--roxo)); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-size: 1.1rem; cursor: pointer; transition: transform 0.3s; display: inline-block; margin-top: 1rem; }
+        .btn-enviar:hover { transform: scale(1.05); }
+        
+        .pergunta { background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; border-left: 5px solid var(--azul); }
+        
+        footer { background: var(--marrom); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .redes-sociais { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; font-size: 1.5rem; }
+        .redes-sociais a { color: white; transition: transform 0.3s; }
+        .redes-sociais a:hover { transform: scale(1.2); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav ul { justify-content: center; }
+            main { padding: 1rem; margin: 1rem; }
+            h2 { font-size: 1.5rem; }
+            .contato-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-ice-cream logo-icon"></i>
+            <h1>Fale Conosco</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="sabores.html"><i class="fas fa-snowflake"></i> Sabores</a></li>
+                <li><a href="acais.html"><i class="fas fa-wine-glass"></i> Açaís</a></li>
+                <li><a href="milkshakes.html"><i class="fas fa-glass-whiskey"></i> Milkshakes</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+                <li><a href="contato.html" class="ativa"><i class="fas fa-phone"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2><i class="fas fa-map-marker-alt"></i> Onde Nos Encontrar</h2>
+        
+        <div class="contato-container">
+            <div class="informacoes-contato">
+                <div class="info-item">
+                    <i class="fas fa-map-pin"></i>
+                    <div>
+                        <h4>Endereço</h4>
+                        <p>Rua das Palmeiras, 123</p>
+                        <p>Centro - São Paulo/SP</p>
+                        <p>CEP: 01234-567</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telefones</h4>
+                        <p>(11) 3456-7890 - Fixo</p>
+                        <p>(11) 99999-8888 - WhatsApp</p>
+                        <p>Delivery: (11) 99999-7777</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Horário de Funcionamento</h4>
+                        <p>Segunda a Sexta: 10h às 22h</p>
+                        <p>Sábado: 10h às 23h</p>
+                        <p>Domingo: 12h às 21h</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mapa">
+                <h3><i class="fas fa-map"></i> Localização</h3>
+                <div class="mapa-placeholder">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📍</div>
+                    <p><strong>Sorveteria Gelada Delícia</strong></p>
+                    <p>Rua das Palmeiras, 123</p>
+                    <p>Centro - São Paulo</p>
+                    <p>Próximo à Praça Central</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2><i class="fas fa-comments"></i> Envie uma Mensagem</h2>
+        
+        <form class="form-contato">
+            <div class="form-group">
+                <label for="nomeContato"><i class="fas fa-user"></i> Seu Nome:</label>
+                <input type="text" id="nomeContato" required placeholder="Digite seu nome">
+            </div>
+            
+            <div class="form-group">
+                <label for="emailContato"><i class="fas fa-envelope"></i> Seu E-mail:</label>
+                <input type="email" id="emailContato" required placeholder="seuemail@exemplo.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="mensagemContato"><i class="fas fa-edit"></i> Sua Mensagem:</label>
+                <textarea id="mensagemContato" required placeholder="Escreva sua mensagem aqui..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-enviar">
+                <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+        </form>
+        
+        <div class="faq" style="margin-top: 3rem;">
+            <h2><i class="fas fa-question-circle"></i> Perguntas Frequentes</h2>
+            
+            <div class="pergunta">
+                <h4>Vocês fazem entregas? Qual o valor?</h4>
+                <p>Sim! Fazemos delivery para toda a região central. Taxa de R$ 5,00 (grátis para pedidos acima de R$ 40,00).</p>
+            </div>
+            
+            <div class="pergunta">
+                <h4>Tem opções sem lactose?</h4>
+                <p>Temos 8 sabores sem lactose e também sorvetes à base de soja.</p>
+            </div>
+            
+            <div class="pergunta">
+                <h4>Aceitam cartão de crédito?</h4>
+                <p>Aceitamos todas as bandeiras: Visa, Mastercard, Elo, além de PIX e dinheiro.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="redes-sociais">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>📍 Rua das Palmeiras, 123 - Centro - São Paulo/SP</p>
+        <p>🕒 Aberto todos os dias - Delivery até 22h</p>
+        <p>📞 (11) 9999-8888 • WhatsApp: (11) 99999-7777</p>
+        <p class="copy">&copy; 2024 Sorveteria Gelada Delícia</p>
+    </footer>
+
+    <!-- JAVASCRIPT DENTRO DO HTML -->
+    <script>
+        // FORMULÁRIO DE CONTATO
+        document.querySelector('.form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('✅ Mensagem enviada com sucesso! Responderemos em breve.');
+            this.reset();
+        });
+        
+        // MENU ATIVO
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('ativa');
+                }
+            });
+            
+            // CONTADOR
+            let visitas = parseInt(localStorage.getItem('visitasContato')) || 0;
+            visitas++;
+            localStorage.setItem('visitasContato', visitas);
+            console.log(`Visitas em Contato: ${visitas}`);
+            
+            // RELÓGIO
+            function atualizarRelogio() {
+                const agora = new Date();
+                const dataStr = agora.toLocaleDateString('pt-BR');
+                const horaStr = agora.toLocaleTimeString('pt-BR');
+                console.log(`Última visita: ${dataStr} ${horaStr}`);
+            }
+            atualizarRelogio();
+        });
+    </script>
+</body>
+</html>
