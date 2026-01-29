@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milkshakes - Sorveteria Gelada Delícia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS DENTRO DO HTML -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        :root { --rosa: #ff9ebb; --azul: #87ceeb; --amarelo: #ffd700; --roxo: #dda0dd; --verde: #98fb98; --marrom: #d2691e; }
+        
+        body { background: linear-gradient(135deg, #ff9ebb 0%, #87ceeb 100%); min-height: 100vh; color: #333; }
+        
+        header { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+        
+        .logo { display: flex; align-items: center; gap: 1rem; }
+        .logo h1 { color: #ff6b9d; font-size: 1.8rem; text-shadow: 2px 2px 0px var(--amarelo); }
+        .logo-icon { font-size: 2.5rem; color: var(--marrom); }
+        
+        nav ul { display: flex; list-style: none; gap: 1rem; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--marrom); font-weight: bold; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        nav a:hover, nav a.ativa { background: var(--rosa); color: white; transform: translateY(-3px); }
+        
+        main { max-width: 1200px; margin: 2rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.95); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-height: 60vh; }
+        
+        h2 { color: var(--roxo); border-bottom: 3px solid var(--amarelo); padding-bottom: 0.5rem; margin-bottom: 2rem; font-size: 2rem; }
+        
+        .cardapio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .produto-card { background: white; border-radius: 15px; padding: 1.5rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; border: 3px solid transparent; display: flex; flex-direction: column; height: 100%; }
+        .produto-card:hover { transform: translateY(-10px); border-color: var(--azul); }
+        .milkshake { border-top: 5px solid var(--marrom); }
+        .icone-produto { font-size: 3rem; margin-bottom: 1rem; color: var(--marrom); }
+        .preco { color: var(--marrom); font-weight: bold; font-size: 1.5rem; margin: 1rem 0; }
+        .btn-adicionar { background: var(--verde); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: bold; transition: background 0.3s; margin-top: auto; }
+        .btn-adicionar:hover { background: #7ae07a; }
+        
+        .btn-enviar { background: linear-gradient(to right, var(--rosa), var(--roxo)); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-size: 1.1rem; cursor: pointer; transition: transform 0.3s; display: inline-block; margin-top: 1rem; }
+        .btn-enviar:hover { transform: scale(1.05); }
+        
+        .opcoes { background: #f8f8f8; padding: 1.5rem; border-radius: 10px; margin: 2rem 0; }
+        .opcao { margin-bottom: 1rem; }
+        select { width: 100%; padding: 0.8rem; border: 2px solid var(--azul); border-radius: 8px; }
+        
+        footer { background: var(--marrom); color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .redes-sociais { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; font-size: 1.5rem; }
+        .redes-sociais a { color: white; transition: transform 0.3s; }
+        .redes-sociais a:hover { transform: scale(1.2); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav ul { justify-content: center; }
+            main { padding: 1rem; margin: 1rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-ice-cream logo-icon"></i>
+            <h1>Milkshakes Cremosos</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="sabores.html"><i class="fas fa-snowflake"></i> Sabores</a></li>
+                <li><a href="acais.html"><i class="fas fa-wine-glass"></i> Açaís</a></li>
+                <li><a href="milkshakes.html" class="ativa"><i class="fas fa-glass-whiskey"></i> Milkshakes</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a></li>
+                <li><a href="contato.html"><i class="fas fa-phone"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2><i class="fas fa-glass-whiskey"></i> Milkshakes Artesanais</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Feitos com sorvete cremoso e ingredientes selecionados</p>
+        
+        <div class="cardapio-grid">
+            <div class="produto-card milkshake">
+                <i class="fas fa-glass-whiskey icone-produto"></i>
+                <h3>Milkshake Oreo</h3>
+                <p>Biscoito Oreo triturado, sorvete de baunilha, calda de chocolate</p>
+                <div class="preco">400ml: R$ 18,90</div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('Milkshake Oreo', 18.90)">Quero este!</button>
+            </div>
+            
+            <div class="produto-card milkshake">
+                <i class="fas fa-cookie-bite icone-produto"></i>
+                <h3>Milkshake Nutella</h3>
+                <p>Nutella, sorvete de chocolate, chantilly, avelãs</p>
+                <div class="preco">400ml: R$ 21,90</div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('Milkshake Nutella', 21.90)">Quero este!</button>
+            </div>
+            
+            <div class="produto-card milkshake">
+                <i class="fas fa-strawberry icone-produto"></i>
+                <h3>Milkshake Morango</h3>
+                <p>Morango fresco, sorvete de morango, leite condensado</p>
+                <div class="preco">400ml: R$ 16,90</div>
+                <button class="btn-adicionar" onclick="adicionarAoCarrinho('Milkshake Morango', 16.90)">Quero este!</button>
+            </div>
+        </div>
+        
+        <div class="opcoes">
+            <h3><i class="fas fa-magic"></i> Crie Seu Milkshake Personalizado</h3>
+            
+            <div class="opcao">
+                <h4>Base de Sorvete:</h4>
+                <select id="base">
+                    <option value="baunilha">Baunilha (R$ 16,90)</option>
+                    <option value="chocolate">Chocolate (R$ 17,90)</option>
+                    <option value="morango">Morango (R$ 16,90)</option>
+                </select>
+            </div>
+            
+            <div class="opcao">
+                <h4>Adicionais (R$ 3,00 cada):</h4>
+                <label><input type="checkbox" value="nutella"> Nutella</label><br>
+                <label><input type="checkbox" value="chocolate"> Calda de Chocolate</label><br>
+                <label><input type="checkbox" value="morango"> Morangos</label><br>
+                <label><input type="checkbox" value="biscoito"> Biscoito Oreo</label>
+            </div>
+            
+            <button class="btn-enviar" onclick="criarMilkshakePersonalizado()">
+                <i class="fas fa-wand-magic-sparkles"></i> Criar Meu Milkshake!
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="redes-sociais">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2024 Sorveteria Gelada Delícia</p>
+    </footer>
+
+    <!-- JAVASCRIPT DENTRO DO HTML -->
+    <script>
+        // CARRINHO SIMPLES
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            alert(`✅ ${nome} adicionado ao carrinho!`);
+        }
+        
+        function criarMilkshakePersonalizado() {
+            const base = document.getElementById('base').value;
+            const adicionais = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                .map(cb => cb.value);
+            
+            let preco = 16.90;
+            if (base === 'chocolate') preco = 17.90;
+            
+            preco += adicionais.length * 3;
+            
+            const nomeBase = {
+                'baunilha': 'Baunilha',
+                'chocolate': 'Chocolate',
+                'morango': 'Morango'
+            }[base];
+            
+            const nome = `Milkshake Personalizado (${nomeBase})`;
+            adicionarAoCarrinho(nome, preco);
+        }
+        
+        // MENU ATIVO
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('ativa');
+                }
+            });
+            
+            // CONTADOR
+            let visitas = parseInt(localStorage.getItem('visitasMilkshakes')) || 0;
+            visitas++;
+            localStorage.setItem('visitasMilkshakes', visitas);
+            console.log(`Visitas em Milkshakes: ${visitas}`);
+        });
+    </script>
+</body>
+</html>
